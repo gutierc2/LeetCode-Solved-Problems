@@ -16,7 +16,7 @@ class Solution {
 		int max1 = 0;
 		int max2 = 0;
 		
-		for(int i = 1; i < nums.length; i++)
+		for(int i = 0; i < nums.length; i++)
 		{
 			int t = p1;
 			p1 = Math.max(p2+nums[i],p1);
@@ -27,6 +27,9 @@ class Solution {
 		
 		nums[0] = temp;
 		nums[nums.length-1] = 0;
+        
+        p1 = 0;
+        p2 = 0;
 		
 		for(int i = 0; i < nums.length; i++)
 		{
@@ -36,6 +39,7 @@ class Solution {
 		}
 		
 		max2 = p1;
+        
 		
         return Math.max(max1, max2);
     }
